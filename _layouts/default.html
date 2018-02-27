@@ -49,4 +49,15 @@
 </script>
 </body>
 </html>
+// This code should live inside your service worker JavaScript, ideally
+// before any other 'fetch' event handlers are defined:
 
+// First, import the library into the service worker global scope:
+importScripts('path/to/offline-google-analytics-import.js');
+
+// Then, call goog.offlineGoogleAnalytics.initialize():
+// See https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-google-analytics
+goog.offlineGoogleAnalytics.initialize();
+
+// At this point, implement any other service worker caching strategies
+// appropriate for your web app.
